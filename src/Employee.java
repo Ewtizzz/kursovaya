@@ -3,6 +3,7 @@ public class Employee {
     String middleName;
     String lastName;
     int id;
+    static int i;
     int department;
     double salary;
 
@@ -12,7 +13,7 @@ public class Employee {
         this.lastName = lastName;
         this.department = department;
         this.salary = salary;
-        this.id = 0;
+        this.id = i++;
 
     }
     public String getFirstName() {
@@ -51,11 +52,11 @@ public class Employee {
     public String toString() {
         return
                 "Имя: " + firstName +
-                ", Фамилия: " + middleName +
-                ", Отчесво: " + lastName +
-                ", id: " + id +
-                ", Отдел: " + department +
-                ", Зарплата: " + salary;
+                        ", Фамилия: " + middleName +
+                        ", Отчесво: " + lastName +
+                        ", id: " + id +
+                        ", Отдел: " + department +
+                        ", Зарплата: " + salary;
     }
 
     public void setFirstName(String firstName) {

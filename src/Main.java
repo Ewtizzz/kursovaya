@@ -1,5 +1,4 @@
 public class Main {
-
     //получаем всех сотрудников
     static void getAllStr(Employee[] arr){
         for (int i = 0; i < arr.length; i++) {
@@ -67,14 +66,14 @@ public class Main {
                 break;
             }
         }
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[j].getDepartment() == otd && arr[j].getSalary() < minSal) {
-                        minSal = arr[j].getSalary();
-                        emp = arr[j].getFirstName() + " " + arr[j].getMiddleName() + " " + arr[j].getLastName();
-                    }
-                }
-            return emp;
+        for (int j = 0; j < arr.length; j++) {
+            if (arr[j].getDepartment() == otd && arr[j].getSalary() < minSal) {
+                minSal = arr[j].getSalary();
+                emp = arr[j].getFirstName() + " " + arr[j].getMiddleName() + " " + arr[j].getLastName();
+            }
         }
+        return emp;
+    }
 
     //получаем максимальную зарплату отдела
     public static String getMaxSalOtd(Employee[] arr,int otd) {
@@ -109,7 +108,7 @@ public class Main {
         double sum = 0;
         int emp = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i].getDepartment() == otd){
+            if (arr[i].getDepartment() == otd) {
                 sum += arr[i].getSalary();
                 emp += 1;
             }
@@ -149,33 +148,27 @@ public class Main {
         }
     }
 
+
+
     public static void main(String[] args) {
+        int arrLength = 10;
+        Employee[] employeeArr;
+        employeeArr = new Employee[arrLength];
+        EmployeeBook eb = new EmployeeBook();
+        employeeArr[0] = new Employee("Антон","Антонов","Антонович",2,83236);
+        employeeArr[1] = new Employee("Иван","Иванов","Иванович",1,94402);
+        employeeArr[2] = new Employee("Семён","Семёнов","Семёнович",3,94741);
+        employeeArr[3] = new Employee("Егор","Егоров","Егорович",1,75733);
+        employeeArr[4] = new Employee("Олег","Олегов","Олегович",4,67258);
+        employeeArr[5] = new Employee("Владимир","Владимиров","Владимирович",5,62590);
+        employeeArr[6] = new Employee("Илья","Ильин","Ильич",1,74447);
+        employeeArr[7] = new Employee("Алексей","Алексеев","Алексеевич",2,33222);
+        employeeArr[8] = new Employee("Артём","Артёмов","Артёмович",4,89830);
+        employeeArr[9] = new Employee("Никита","Никитин","Никитич",1,68492);
+
         System.out.println("базовая сложность");
         //базовая сложность
-        Employee[] employeeArr;
-        employeeArr = new Employee[10];
 
-        Employee e0 = new Employee("Антон","Антонов","Антонович",2,83236);
-        Employee e1 = new Employee("Иван","Иванов","Иванович",1,94402);
-        Employee e2 = new Employee("Семён","Семёнов","Семёнович",3,94741);
-        Employee e3 = new Employee("Егор","Егоров","Егорович",1,75733);
-        Employee e4 = new Employee("Олег","Олегов","Олегович",4,67258);
-        Employee e5 = new Employee("Владимир","Владимиров","Владимирович",5,62590);
-        Employee e6 = new Employee("Илья","Ильин","Ильич",1,74447);
-        Employee e7 = new Employee("Алексей","Алексеев","Алексеевич",2,33222);
-        Employee e8 = new Employee("Артём","Артёмов","Артёмович",4,89830);
-        Employee e9 = new Employee("Никита","Никитин","Никитич",1,68492);
-
-        employeeArr[0] = e0;
-        employeeArr[1] = e1;
-        employeeArr[2] = e2;
-        employeeArr[3] = e3;
-        employeeArr[4] = e4;
-        employeeArr[5] = e5;
-        employeeArr[6] = e6;
-        employeeArr[7] = e7;
-        employeeArr[8] = e8;
-        employeeArr[9] = e9;
         //a
         System.out.println("8");
         System.out.println("a");
@@ -241,6 +234,11 @@ public class Main {
         //b
         System.out.println("b");
         getAllSalMore(employeeArr,75000);
+        System.out.println("-=-=-=-=-=-=-=-=-=-");
+        //очень сложно
+        //4
+        //a
+
 
     }
 }
