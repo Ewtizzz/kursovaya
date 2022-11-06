@@ -1,13 +1,13 @@
 import java.util.Objects;
 
 public class Employee {
-    public String firstName;
-    public String middleName;
-    public String lastName;
-    public int id;
-    public static int i;
-    public int department;
-    public double salary;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private int id;
+    private static int i;
+    private int department;
+    private double salary;
 
     public Employee(String firstName,String middleName,String lastName,int department,double salary){
         this.firstName = firstName;
