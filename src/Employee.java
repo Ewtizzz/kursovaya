@@ -1,11 +1,13 @@
+import java.util.Objects;
+
 public class Employee {
-    String firstName;
-    String middleName;
-    String lastName;
-    int id;
-    static int i;
-    int department;
-    double salary;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private int id;
+    private static int i;
+    private int department;
+    private double salary;
 
     public Employee(String firstName,String middleName,String lastName,int department,double salary){
         this.firstName = firstName;
@@ -16,6 +18,20 @@ public class Employee {
         this.id = i++;
 
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id && department == employee.department && Double.compare(employee.salary, salary) == 0 && Objects.equals(firstName, employee.firstName) && Objects.equals(middleName, employee.middleName) && Objects.equals(lastName, employee.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, middleName, lastName, id, department, salary);
+    }
+
     public String getFirstName() {
         return firstName;
     }

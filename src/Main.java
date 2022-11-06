@@ -1,12 +1,15 @@
+import java.lang.reflect.Array;
+
 public class Main {
+    //private static Employee[] employeeArr = new Employee[10];
     //получаем всех сотрудников
-    static void getAllStr(Employee[] arr){
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i].toString());
+    /*public static void getAllStr(){
+        for (int i = 0; i < employeeArr.length; i++) {
+            System.out.println(employeeArr[i].toString());
         }
-    }
+    }*/
     //получаем все ФИО
-    static void getAllFIO(Employee[] arr){
+    public static void getAllFIO(Employee[] arr){
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i].getFirstName() + " " + arr[i].getMiddleName() + " " + arr[i].getLastName());
         }
@@ -152,9 +155,8 @@ public class Main {
 
     public static void main(String[] args) {
         int arrLength = 10;
-        Employee[] employeeArr;
-        employeeArr = new Employee[arrLength];
-        EmployeeBook eb = new EmployeeBook();
+        Employee[] employeeArr = new Employee[arrLength];
+
         employeeArr[0] = new Employee("Антон","Антонов","Антонович",2,83236);
         employeeArr[1] = new Employee("Иван","Иванов","Иванович",1,94402);
         employeeArr[2] = new Employee("Семён","Семёнов","Семёнович",3,94741);
@@ -172,7 +174,7 @@ public class Main {
         //a
         System.out.println("8");
         System.out.println("a");
-        getAllStr(employeeArr);
+        //getAllStr();
         System.out.println("-=-=-=-=-=-=-=-=-=-");
         //b
         System.out.println("b | Затраты на зарплаты всех работников: " + getAllSum(employeeArr));
